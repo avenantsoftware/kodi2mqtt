@@ -72,7 +72,21 @@ The addon listens to the following topics (prefixed with the configured topic pr
   - "toggle" to toggle between play and pause
   - "next" to play the next track
   - "previous" to play the previous track
+  
+Connecting to HomeAssistant
+---------------------------
 
+in sensors.yaml:
+
+- platform: mqtt
+  name: Kodi Status
+  state_topic: "kodi/status/playbackstate"
+  value_template: "{{ value_json.val }}"
+
+- platform: mqtt
+  name: Kodi Progress
+  state_topic: "kodi/status/progress"
+  value_template: "{{ value_json.val }}"
 
 See also
 --------
@@ -84,4 +98,3 @@ See also
 Changelog
 ---------
 Please see [service.mqtt/changelog.txt](service.mqtt/changelog.txt) for the change log
-  
