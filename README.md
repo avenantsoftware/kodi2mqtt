@@ -76,7 +76,7 @@ The addon listens to the following topics (prefixed with the configured topic pr
 Connecting to HomeAssistant
 ---------------------------
 
-in sensors.yaml:
+<pre>in sensors.yaml:
 
 - platform: mqtt
   name: Kodi Status
@@ -86,7 +86,7 @@ in sensors.yaml:
 - platform: mqtt
   name: Kodi Progress
   state_topic: "kodi/status/progress"
-  value_template: "{{ value_json.val }}"
+  value_template: "{{ value_json.val }}"</pre>
 
 See also
 --------
